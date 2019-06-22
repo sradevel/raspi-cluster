@@ -1,0 +1,32 @@
+---
+- name: Hostname
+  hostname:
+      name: "{{ inventory_hostname }}"
+
+- name: Ensure pyhton-apt is installed
+  apt:
+      name: python-apt
+      state: latest
+
+- name: Ensure locale exists
+  locale_gen:
+     name: de_DE.UTF-8
+     state: present
+
+- name: Set default locales
+  command: localectl set-locale LANG=de_DE.UTF-8 
+
+- name: Update apt cache
+  apt: 
+    update_cache: yes
+
+- name: Safe upgrade
+  apt: 
+    upgrade: safe
+
+- name: Install needed packages
+  apt: 
+    name: "{{ packages }}" 
+  vars:
+      packages:
+      - git    
