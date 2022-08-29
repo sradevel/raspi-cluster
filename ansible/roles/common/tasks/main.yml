@@ -3,10 +3,10 @@
   hostname:
       name: "{{ inventory_hostname }}"
 
-- name: Ensure pyhton-apt is installed
-  apt:
-      name: python-apt
-      state: latest
+# - name: Ensure pyhton-apt is installed
+  # apt:
+      # name: python-apt
+      # state: latest
 
 - name: Ensure locale exists
   locale_gen:

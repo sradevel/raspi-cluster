@@ -1,0 +1,9 @@
+---
+- name: Install needed packages
+  apt: 
+    name: "{{ packages }}" 
+  vars:
+      packages:
+      - git    
+      - build-essential
+      - golang

@@ -1,0 +1,9 @@
+[master]
+cl-master
+
+[nodes]
+cl-worker-01
+cl-worker-02
+cl-worker-03
+cl-worker-04
+cl-worker-05
